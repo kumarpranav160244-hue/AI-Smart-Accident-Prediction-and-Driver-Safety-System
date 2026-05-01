@@ -1,0 +1,11 @@
+Camera → Detects driver fatigue
+Ultrasonic → Detects obstacle
+MPU6050 → Detects sudden motion
+
+          ↓
+     Raspberry Pi
+          ↓
+   Decision Algorithm (AI)
+
+          ↓
+   Buzzer Alert / Warning
