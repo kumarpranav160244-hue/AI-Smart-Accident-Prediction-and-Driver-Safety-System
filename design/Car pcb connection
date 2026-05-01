@@ -1,1 +1,44 @@
+                ┌────────────────────────────┐
+                │      Car Battery (12V)     │
+                └────────────┬───────────────┘
+                             │
+                             ▼
+         ┌──────────────────────────────────────┐
+         │  LM2596 Buck Converter (12V → 5V)   │
+         └────────────┬────────────────────────┘
+                      │ 5V Output
+                      ▼
+          ┌──────────────────────────────┐
+          │   Raspberry Pi 5 (Main MCU) │
+          └──────────────────────────────┘
+             │        │        │       │
+             │        │        │       │    
 
+   ┌────────────┐ ┌──────────────┐ ┌────────┐ ┌────────────┐
+   │ Ultrasonic │ │   MPU6050    │ │ Camera Module│ │   Buzzer   │
+   │  HC-SR04   │ │ (I2C Sensor) │ │ (Driver AI)  │ │   Alert    │
+   └────────────┘ └──────────────┘ └──────────────┘ └────────────┘
+
+Connections:
+
+ULTRASONIC SENSOR:
+ VCC  → 5V
+ GND  → GND
+ TRIG → GPIO23
+ ECHO → GPIO24 (via voltage divider)
+
+MPU6050:
+ VCC  → 3.3V
+ GND  → GND
+ SDA  → GPIO2
+ SCL  → GPIO3
+
+CAMERA:
+ CSI Port → Raspberry Pi Camera Port
+
+BUZZER:
+ GPIO18 → Resistor → Transistor → Buzzer → GND
+
+OPTIONAL:
+ GPS Module → UART
+ GSM Module → UART
