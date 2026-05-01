@@ -1,0 +1,11 @@
+12V Battery
+    │
+    ▼
+[ LM2596 Buck Converter ]
+    │
+    ├── 5V → Raspberry Pi
+    ├── 5V → Ultrasonic Sensor
+    └── 5V → Buzzer
+
+    └── 3.3V (from Pi)
+          └── MPU6050
